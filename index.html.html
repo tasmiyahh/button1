@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: black;
+        }
+        .div1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin:50px auto;
+            background-image: url(back2.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        
+            color: green;
+            width: 50%;
+            height: 100vh;
+            
+        }
+        .btn, .btn2{
+            margin: 0px;
+            font-size: larger;
+            letter-spacing: 1em;
+            padding: 5px 0 5px 7px;
+            border: 5px solid green;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+        .btn:hover{
+            color: green;
+            background-color: black;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 5px 5px;
+        }
+
+        .btn2:hover{
+            color: green;
+            background-color: black;
+            
+            box-shadow: 2px 2px 5px 5px;
+            text-transform: uppercase; 
+        }
+    </style>
+</head>
+<body>
+    
+<div class="div1">
+    <h1 style="text-decoration:underline ;">BUTTONS</h1>
+   <button class="btn" onclick="func1()" onblur="func2()">time</button>
+
+   <h1 class="head"></h1>
+
+   <button class="btn2" onclick="func11()" onblur="func22()">day</button>
+   <h1 class="head2"></h1>
+   
+</div>
+    <script>
+       
+
+        var date = new Date();
+        function func1(){
+
+
+    
+         var d = date.getHours();
+        var e = date.getMinutes();
+         var f = date.getSeconds();
+        //  document.write(d +":" +e + ":" + f);
+   
+        var a = document.querySelector(".head").innerHTML=d +":" + e +":" +f;
+
+        }
+
+        function func2(){
+         var a =document.querySelector(".head").innerHTML="";
+         }
+
+         function func11(){
+            const weekday =["sunday","monday" , "tuesday" , "wednesday" , "thursday" , "friday" ,"saturday"];
+            var date = new Date();
+            var day = weekday[date.getDay()];
+
+            var a = document.querySelector(".head2").innerHTML="today is "+ day;
+
+         }
+
+         function func22(){
+         var a =document.querySelector(".head2").innerHTML="";
+         }
+
+
+
+       
+
+        
+
+    </script>
+</body>
+</html>
